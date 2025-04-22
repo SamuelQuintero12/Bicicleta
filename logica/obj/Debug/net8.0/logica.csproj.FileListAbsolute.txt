@@ -10,3 +10,19 @@ C:\Users\USUARIO\Desktop\tiendaBc\logica\obj\Debug\net8.0\logica.AssemblyInfoInp
 C:\Users\USUARIO\Desktop\tiendaBc\logica\obj\Debug\net8.0\logica.AssemblyInfo.cs
 C:\Users\USUARIO\Desktop\tiendaBc\logica\obj\Debug\net8.0\logica.csproj.CoreCompileInputs.cache
 C:\Users\USUARIO\Desktop\tiendaBc\logica\obj\Debug\net8.0\logica.sourcelink.json
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.csproj.AssemblyReference.cache
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.AssemblyInfoInputs.cache
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.AssemblyInfo.cs
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.csproj.CoreCompileInputs.cache
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.sourcelink.json
+C:\Samuel Quintero\ummm\Bicicleta\logica\bin\Debug\net8.0\logica.deps.json
+C:\Samuel Quintero\ummm\Bicicleta\logica\bin\Debug\net8.0\logica.dll
+C:\Samuel Quintero\ummm\Bicicleta\logica\bin\Debug\net8.0\logica.pdb
+C:\Samuel Quintero\ummm\Bicicleta\logica\bin\Debug\net8.0\Modelo.dll
+C:\Samuel Quintero\ummm\Bicicleta\logica\bin\Debug\net8.0\Modelo.pdb
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.csproj.Up2Date
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.dll
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\refint\logica.dll
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\logica.pdb
+C:\Samuel Quintero\ummm\Bicicleta\logica\obj\Debug\net8.0\ref\logica.dll

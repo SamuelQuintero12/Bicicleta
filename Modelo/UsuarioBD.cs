@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using Modelo.Entitys;
 using MySql.Data.MySqlClient;
 
 namespace Modelo
 {
-    public class UsuarioBD : ConexionMsql
+    public class UsuarioBD
     {
         private readonly ConexionMsql db = new();
 
@@ -14,12 +13,12 @@ namespace Modelo
         public usuarioEntyti BuscarUsuarioPorEmail(string email)
         {
             usuarioEntyti usuario = null;
+            MySqlConnection conn = db.GetConnection();
 
             try
             {
-                using (MySqlCommand cmd = GetConnection().CreateCommand())
+                using (MySqlCommand cmd = new MySqlCommand("BuscarUsuarioPorEmail", conn))
                 {
-                    cmd.CommandText = "BuscarUsuarioPorEmail";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@p_email", email);
 
@@ -29,10 +28,11 @@ namespace Modelo
                         {
                             usuario = new usuarioEntyti
                             {
-                                usuario_id = reader.GetInt32("id"),
-                                Nombre = reader.GetString("nombre"),
-                                Rol = reader.GetString("rol"),
-                                Contraseña = reader.GetString("contraseña")
+                                usuario_id = Convert.ToInt32(reader["id"]),
+                                Nombre = reader["nombre"].ToString(),
+                                Email = reader["email"].ToString(),
+                                Rol = reader["rol"].ToString(),
+                                Contraseña = reader["contraseña"].ToString()
                             };
                         }
                     }
@@ -42,6 +42,10 @@ namespace Modelo
             {
                 Console.WriteLine("Error al buscar usuario: " + ex.Message);
             }
+            finally
+            {
+                db.CerrarConexion(); // ← importante para liberar recursos
+            }
 
             return usuario;
         }
@@ -50,19 +54,17 @@ namespace Modelo
         public int GuardarUsuario(usuarioEntyti usuario)
         {
             int resultado = 0;
+            MySqlConnection conn = db.GetConnection();
 
             try
             {
-                using (MySqlCommand cmd = GetConnection().CreateCommand())
+                using (MySqlCommand cmd = new MySqlCommand("RegistrarUsuario", conn))
                 {
-                    cmd.CommandText = "RegistrarUsuario";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    string hash = BCrypt.Net.BCrypt.HashPassword(usuario.Contraseña);
 
                     cmd.Parameters.AddWithValue("@p_nombre", usuario.Nombre);
                     cmd.Parameters.AddWithValue("@p_email", usuario.Email);
-                    cmd.Parameters.AddWithValue("@p_contraseña", hash);
+                    cmd.Parameters.AddWithValue("@p_contraseña", usuario.Contraseña);
                     cmd.Parameters.AddWithValue("@p_rol", usuario.Rol);
 
                     resultado = cmd.ExecuteNonQuery();
@@ -71,6 +73,10 @@ namespace Modelo
             catch (Exception ex)
             {
                 Console.WriteLine("Error al guardar usuario: " + ex.Message);
+            }
+            finally
+            {
+                db.CerrarConexion();
             }
 
             return resultado;

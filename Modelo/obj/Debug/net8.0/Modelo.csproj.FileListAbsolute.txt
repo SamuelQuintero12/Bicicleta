@@ -10,3 +10,16 @@ C:\Users\USUARIO\Desktop\tiendaBc\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfoInp
 C:\Users\USUARIO\Desktop\tiendaBc\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfo.cs
 C:\Users\USUARIO\Desktop\tiendaBc\Modelo\obj\Debug\net8.0\Modelo.csproj.CoreCompileInputs.cache
 C:\Users\USUARIO\Desktop\tiendaBc\Modelo\obj\Debug\net8.0\Modelo.sourcelink.json
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.csproj.AssemblyReference.cache
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfoInputs.cache
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.AssemblyInfo.cs
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.csproj.CoreCompileInputs.cache
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.sourcelink.json
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\bin\Debug\net8.0\Modelo.deps.json
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\bin\Debug\net8.0\Modelo.dll
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\bin\Debug\net8.0\Modelo.pdb
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.dll
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\refint\Modelo.dll
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\Modelo.pdb
+C:\Samuel Quintero\ummm\Bicicleta\Modelo\obj\Debug\net8.0\ref\Modelo.dll

@@ -11,6 +11,10 @@ namespace Principal.Ventas
             idUser = usuario;
         }
 
+        public venderProducto()
+        {
+        }
+
         private VendedorController controller = new VendedorController();
 
         private void button1_Click(object sender, EventArgs e)

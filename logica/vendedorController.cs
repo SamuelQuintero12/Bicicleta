@@ -48,4 +48,9 @@ public class VendedorController
             return 0;
         }
     }
+
+    public void VentaProducto(string text1, string text2, usuarioEntyti idUser)
+    {
+        throw new NotImplementedException();
+    }
 }

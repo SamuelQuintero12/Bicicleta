@@ -1,64 +1,77 @@
 ﻿using System;
-using Modelo;
+using System.Data;
+using MySql.Data.MySqlClient;
 using Modelo.Entitys;
-using BCrypt.Net;
 
-namespace logica
+namespace Modelo
 {
-    public class UsuarioController
+    public class UsuarioBD
     {
-        private readonly UsuarioBD db = new UsuarioBD();
-
-        // Registra un nuevo usuario en la base de datos
-        public string RegistrarUsuario(string nombre, string email, string contraseña, string rol)
+        private readonly string connectionString = "Server=localhost;Database=tienda_db;User ID=root; Pwd=";
+        public int GuardarUsuario(usuarioEntyti usuario)
         {
             try
             {
-                string contraseñaHasheada = BCrypt.Net.BCrypt.HashPassword(contraseña);
-
-                usuarioEntyti nuevoUsuario = new usuarioEntyti
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    Nombre = nombre,
-                    Email = email,
-                    Contraseña = contraseñaHasheada,
-                    Rol = rol
-                };
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("RegistrarUsuario", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("p_nombre", usuario.Nombre);
+                        cmd.Parameters.AddWithValue("p_email", usuario.Email);
+                        cmd.Parameters.AddWithValue("p_contraseña", usuario.Contraseña);
+                        cmd.Parameters.AddWithValue("p_rol", usuario.Rol);
 
-                int resultado = db.GuardarUsuario(nuevoUsuario);
-                return resultado > 0
-                    ? "Usuario registrado exitosamente."
-                    : "Error al registrar el usuario.";
+                        return cmd.ExecuteNonQuery(); // Devuelve 1 si todo va bien
+                    }
+                }
             }
             catch (Exception ex)
             {
-                return $"Error: {ex.Message}";
+                Console.WriteLine("Error al guardar el usuario: " + ex.Message);
+                return 0;
             }
         }
 
-        // Inicia sesión verificando email y contraseña
-        public usuarioEntyti Login(string correo, string contraseña)
+        public usuarioEntyti BuscarUsuarioPorEmail(string email)
         {
-            usuarioEntyti usuario = db.BuscarUsuarioPorEmail(correo);
+            usuarioEntyti usuario = null;
 
-            if (usuario != null)
+            try
             {
-                bool contraseñaValida = BCrypt.Net.BCrypt.Verify(contraseña, usuario.Contraseña);
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("BuscarUsuarioPorEmail", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("p_email", email);
 
-                if (contraseñaValida)
-                {
-                    return usuario;
-                }
-                else
-                {
-                    Console.WriteLine("La contraseña no coincide.");
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                usuario = new usuarioEntyti
+                                {
+                                    usuario_id = Convert.ToInt32(reader["id"]),
+                                    Nombre = reader["nombre"].ToString(),
+                                    Email = reader["email"].ToString(),
+                                    Contraseña = reader["contraseña"].ToString(),
+                                    Rol = reader["rol"].ToString()
+                                };
+                            }
+                        }
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("No se encontró el usuario.");
+                Console.WriteLine("Error al buscar usuario: " + ex.Message);
             }
 
-            return null;
+            return usuario;
         }
     }
 }
+

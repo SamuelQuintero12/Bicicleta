@@ -77,10 +77,7 @@ namespace Principal
             }
         }
 
-        private void BtAgregarProve_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void TbBusqueda_TextChanged(object sender, EventArgs e)
         {

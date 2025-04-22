@@ -31,5 +31,10 @@ namespace Modelo
             }
             return resultado;
         }
+
+        public int GuardarProveedor(Entitys.ProveedorEntity proveedor)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

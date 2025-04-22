@@ -1,5 +1,6 @@
 ﻿using Modelo;  // Para acceder a la capa de datos (ProveedorBD)
-using Modelo.Entitys;  // Para acceder a las entidades (ProveedorEntity)
+using Modelo.Entitys;
+using ProveedorEntity = Modelo.Entitys.ProveedorEntity;  // Para acceder a las entidades (ProveedorEntity)
 
 namespace logica
 {
