@@ -1,35 +1,42 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Data;
-using Modelo;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Modelo
 {
-    public class ConexionDB
+    public class ConexionMsql
     {
-        private string cadenaConexion = "Server=localhost; Database=tu_base_de_datos; Uid=root; Pwd=tu_contraseña;";
-
-        public MySqlConnection AbrirConexion()
+        public MySqlConnection connection;
+        private string cadenaConexion;
+        
+        public ConexionMsql()
         {
-            MySqlConnection conexion = new MySqlConnection(cadenaConexion);
+            //cadenaConexion = "Server=localhost; Database=tiendabc; Uid=SamuelQuintero; Pwd=Samuelandres;";
+
+            cadenaConexion = "Server=localhost;Database=tiendadb;User ID=root;Password=";
+
+            connection = new MySqlConnection(cadenaConexion);
+        }
+
+        public MySqlConnection GetConnection()
+        {
+
             try
             {
-                conexion.Open();
-                return conexion;
+                if (connection.State != System.Data.ConnectionState.Open)
+                {
+                    connection.Open();
+                }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine("❌ Error al conectar: " + ex.Message);
-                return null;
+                Console.WriteLine(e.Message);
             }
-        }
 
-        public void CerrarConexion(MySqlConnection conexion)
-        {
-            if (conexion != null && conexion.State == ConnectionState.Open)
-            {
-                conexion.Close();
+            return connection;
             }
         }
-    }
 }

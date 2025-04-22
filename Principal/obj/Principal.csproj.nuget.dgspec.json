@@ -54,13 +54,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[9.2.0, )"
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -129,13 +129,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[9.2.0, )"
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -208,13 +208,13 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[9.2.0, )"
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[9.0.3, )"
             }
           },
           "imports": [

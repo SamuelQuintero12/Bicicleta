@@ -2,34 +2,34 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="AgregarP.cs">
+    <Compile Update="Inventario\AgregarP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AgregarProve.cs">
+    <Compile Update="Inventario\AgregarProve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EditarUsuario.cs">
+    <Compile Update="Inventario\EditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EliminarP.cs">
+    <Compile Update="Inventario\EliminarP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="Inventario\InventarioP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GestionProductos.cs">
+    <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GestionProveedores.cs">
+    <Compile Update="Usuario\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Inventario.cs">
+    <Compile Update="Usuario\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Menu.cs">
+    <Compile Update="Ventas\VenderProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Ventas.cs">
+    <Compile Update="Ventas\Venta_p.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
